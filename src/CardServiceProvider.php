@@ -6,9 +6,11 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
+use Twentyonetf\AjaxTableCard\Commands\CreateAjaxCard;
 
 class CardServiceProvider extends ServiceProvider
 {
+
     /**
      * Bootstrap any application services.
      *
@@ -38,8 +40,8 @@ class CardServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova'])
-                ->prefix('nova-vendor/ajax-table-card')
-                ->group(__DIR__.'/../routes/api.php');
+            ->prefix('nova-vendor/ajax-table-card')
+            ->group(__DIR__.'/../routes/api.php');
     }
 
     /**
@@ -49,6 +51,10 @@ class CardServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if (!$this->app->runningInConsole()) return;
+
+        $this->commands([
+            CreateAjaxCard::class
+        ]);
     }
 }
