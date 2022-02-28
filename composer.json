@@ -1,6 +1,6 @@
 {
     "name": "twentyonetf/ajax-table-card",
-    "description": "A Laravel Nova card.",
+    "description": "A customisable Laravel Nova card that fetches data through ajax calls.",
     "keywords": [
         "laravel",
         "nova"
