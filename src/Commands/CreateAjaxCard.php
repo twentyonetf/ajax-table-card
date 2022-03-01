@@ -82,7 +82,7 @@ class CreateAjaxCard extends Command
             ':title' => Str::headline($this->className),
         ];
 
-        $templateFilePath = '/../Stubs/AjaxCardTemplate.php';
+        $templateFilePath = __DIR__ . '/../Stubs/AjaxCardTemplate.php';
 
         $template = $this->files->get($templateFilePath);
 

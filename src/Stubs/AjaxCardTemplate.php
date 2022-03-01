@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Nova\Templates;
+namespace App\Nova\Cards;
 
-use Illuminate\Http\Request;
 use Twentyonetf\AjaxTableCard\AjaxTableCard;
 
 class :className extends AjaxTableCard
