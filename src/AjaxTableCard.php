@@ -62,7 +62,7 @@ class AjaxTableCard extends Card
      * refresh the card to see if there's new data.
      *
      */
-    public bool $hideWhenEmpty = true;
+    public bool $hideWhenEmpty = false;
 
 
     public function slug()
