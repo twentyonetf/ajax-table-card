@@ -56,6 +56,14 @@ class AjaxTableCard extends Card
      */
     public bool $countable = true;
 
+    /*
+     * Hide the card when there's no data.
+     * (warning) if you have a long cache time, the user has no way to
+     * refresh the card to see if there's new data.
+     *
+     */
+    public bool $hideWhenEmpty = true;
+
 
     public function slug()
     {
@@ -75,7 +83,8 @@ class AjaxTableCard extends Card
             'header' => $this->header,
             'linkable' => $this->linkable,
             'expanded' => $this->expanded,
-            'countable' => $this->countable
+            'countable' => $this->countable,
+            'hideWhenEmpty' => $this->hideWhenEmpty
         ];
     }
 

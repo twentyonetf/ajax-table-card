@@ -1,6 +1,6 @@
 <template>
 
-    <card class="flex flex-col h-auto">
+    <card class="flex flex-col h-auto" v-if="cardShown">
 
         <div class="flex flex-wrap">
 
@@ -109,6 +109,7 @@ export default {
             linkable: this.card.linkable,
             expanded: this.card.expanded,
             countable: this.card.countable,
+            hideWhenEmpty: this.card.hideWhenEmpty,
             rows: [],
             since: null,
             loading: true,
@@ -176,6 +177,20 @@ export default {
 
 
         }
+    },
+
+    computed: {
+
+        cardShown: function () {
+
+            if (this.hideWhenEmpty) {
+                return this.rows.length > 0
+            } else {
+                return true;
+            }
+
+        }
+
     }
 }
 </script>

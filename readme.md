@@ -52,6 +52,12 @@ class NewUsers extends AjaxTableCard
 
 ```
 
+You could also use this artisan command:
+
+```
+php artisan card:create {CardClassName}
+```
+
 2. Register card like any nova card, for example:  ```NovaServiceProvider``` if you want it on the dashboard.
 
 ```
@@ -94,15 +100,16 @@ Route::get('/api/new-users', function () {
 
 **Customisation**
 
-| Option     | Type       | Description                                             | default         |
-|------------|------------|---------------------------------------------------------|-----------------|
-| $title     | ``string`` | Used to set the title of the card.                      | Ajax Table Card |
- | $header    | ``array``  | An array of the items in the header of the table.       | ``null``        |
- | $link      | ``string`` | The link to fetch the data from.                        | ``null``        |
- | $cache     | ``string`` | How long to cache the data for.                         | 86400           |
- | $linkable  | ``bool``   | Is the last column of the table a link to a page?       | ``true``        |
- | $expanded  | ``bool``   | The default status of table, expanded or collapsed      | ``true``        |
+| Option   | Type       | Description                                             | default         |
+|----------|------------|---------------------------------------------------------|-----------------|
+| $title   | ``string`` | Used to set the title of the card.                      | Ajax Table Card |
+ | $header  | ``array``  | An array of the items in the header of the table.       | ``null``        |
+ | $link    | ``string`` | The link to fetch the data from.                        | ``null``        |
+ | $cache   | ``string`` | How long to cache the data for.                         | 86400           |
+ | $linkable | ``bool``   | Is the last column of the table a link to a page?       | ``true``        |
+ | $expanded | ``bool``   | The default status of table, expanded or collapsed      | ``true``        |
  | $countable | ``bool``   | Display a counter of how many results next to the title | ``true``        |
+ | $hideWhenEmpty | ``bool``   | Hide the card when there's no data. | ``true``        |
 
 ***
 
