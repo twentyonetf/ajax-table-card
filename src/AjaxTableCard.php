@@ -97,6 +97,6 @@ class AjaxTableCard extends Card
      */
     public function component()
     {
-        return 'ajax-table-card-'.$this->slug();
+        return 'ajax-table-card';
     }
 }
